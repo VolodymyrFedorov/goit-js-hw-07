@@ -21,19 +21,5 @@ gallery.innerHTML = galleryMarkup;
 
 const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt', 
-  captionPosition: 'bottom',
+  captionDelay: 250,
 });
-
-lightbox.on('show.simplelightbox', () => {
-  setTimeout(() => {
-    const captionElements = document.querySelectorAll('.gallery__caption');
-    captionElements.forEach((caption) => caption.classList.add('visible'));
-  }, 250);
-});
-
-lightbox.on('close.simplelightbox', () => {
-  const captionElements = document.querySelectorAll('.gallery__caption');
-  captionElements.forEach((caption) => caption.classList.remove('visible'));
-});
-
-console.log(galleryItems);
